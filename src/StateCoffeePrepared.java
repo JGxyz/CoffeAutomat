@@ -2,23 +2,12 @@ public class StateCoffeePrepared extends State {
 
 
     @Override
-    public void receiveCoffee() {
-        super.receiveCoffee();
+    public void receiveCoffee(Automate automate) {
+
+        System.out.println("Coffee received");
+        automate.setState(new StateCoinNotInserted());
     }
 
-    @Override
-    public void receiveCoin() {
-        super.receiveCoin();
-    }
-
-    @Override
-    public void prepareCoffee() {
-        super.prepareCoffee();
-    }
-
-    public Coin getCoinBack(){
-        return new Coin();
-    }
 
 
 }

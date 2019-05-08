@@ -2,22 +2,17 @@ public class StateCoinNotInserted extends State {
 
 
     @Override
-    public void receiveCoin() {
-        super.receiveCoin();
+    public void receiveCoin(Automate automate) {
+
+        System.out.println("Coin inserted");
+        automate.increaseCoinBank();
+        automate.setState(new StateCoinInserted());
+
     }
 
     @Override
-    public void receiveCoffee() {
-        super.receiveCoffee();
-    }
-
-    @Override
-    public void prepareCoffee() {
-        super.prepareCoffee();
-    }
-
-    @Override
-    public void refillCoffee(Automate automate) {
-        super.refillCoffee(automate);
+    public void getCoinBank(Automate automate) {
+        System.out.println("You get " + automate.getCoinBank() + " $");
+        automate.emptyCoinBank();
     }
 }

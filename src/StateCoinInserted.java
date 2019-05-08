@@ -1,20 +1,20 @@
+import static java.lang.Thread.sleep;
+
 public class StateCoinInserted extends State {
 
-    public StateCoinInserted()
-    {
-        System.out.println("Coin inserted");
-    }
-    @Override
-    public void prepareCoffee() {
-        super.prepareCoffee();
-    }
 
     @Override
-    public void receiveCoin() {
-        super.receiveCoin();
+    public void prepareCoffee(Automate automate) throws InterruptedException {
+        System.out.println("Coffee preparing..");
+        sleep(10000);
+        System.out.println("Coffee done");
+        automate.setState(new StateCoffeePrepared());
     }
 
-    public Coin getCoinBack(){
-        return new Coin();
+
+    public void getCoinBack(Automate automate){
+        System.out.println("Coin returned");
+        automate.setState(new StateCoinNotInserted());
+
     }
 }
