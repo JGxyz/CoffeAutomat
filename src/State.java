@@ -14,6 +14,10 @@ public abstract class State {
     }
 
     public void getCoinBank(Automate automate) {
+        System.out.println("Error, Can't return coin bank");
+    }
+
+    public void getCoinBack(Automate automate) {
         System.out.println("Error, Can't return coin");
     }
 

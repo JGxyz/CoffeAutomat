@@ -13,15 +13,6 @@ public class Automate {
     }
 
 
-
-    public State getState() {
-        return state;
-    }
-
-    public Integer getAmountOfCoffee() {
-        return amountOfCoffee;
-    }
-
     public void input(String command)
     {
         if(amountOfCoffee.equals(0))
@@ -41,6 +32,9 @@ public class Automate {
                     this.state.receiveCoffee(this);
                     break;
                 case "4":
+                    this.state.getCoinBack(this);
+                    break;
+                case "5":
                     this.state.getCoinBank(this);
                     break;
 

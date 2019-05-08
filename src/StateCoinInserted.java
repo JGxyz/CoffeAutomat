@@ -17,4 +17,6 @@ public class StateCoinInserted extends State {
         automate.setState(new StateCoinNotInserted());
 
     }
+
+
 }
